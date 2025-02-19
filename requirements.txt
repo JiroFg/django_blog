@@ -1,2 +1,4 @@
 django==5.0.4
 python-decouple==3.8
+django-taggit==5.0.1
+markdown==3.6

@@ -3,13 +3,22 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from django.views.decorators.http import require_POST
 from django.core.mail import send_mail
+from django.db.models import Count
+from taggit.models import Tag
 
 from blog.forms import EmailPostForm, CommentForm
 from .models import Post
 
 # Create your views here.
-def post_list(request):
+def post_list(request, tag_slug=None):
     post_list = Post.published.all()
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(
+            Tag,
+            slug=tag_slug
+        )
+        post_list = post_list.filter(tags__in=[tag])
     # creamos el paginator con la lista y la cantidad de elementos por pagina
     paginator = Paginator(post_list, 3)
     # obtenemos el numero de pagina
@@ -23,7 +32,8 @@ def post_list(request):
         # si es un numero de pagina invalido vamos a obtener la ultima pagina
         posts = paginator.page(paginator.num_pages)
     context = {
-        'posts': posts
+        'posts': posts,
+        'tag': tag 
     }
     return render(request, 'blog/post/list.html', context)
 
@@ -46,10 +56,23 @@ def post_detail(request, year, month, day, post):
     )
     comments = post.comments.filter(active=True)
     form = CommentForm()
+    # post similares
+    # obtenemos los id y lo ponemos ponemos en una lista simple
+    post_tags_ids = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(
+        tags__in=post_tags_ids
+    ).exclude(
+        id=post.id
+    )
+    # con annotate creamos un nuevo campo con el nombre same_tags que guarda la cantidad de tags en comun
+    similar_posts = similar_posts.annotate(
+        same_tags=Count('tags')
+    ).order_by('-same_tags', '-publish')[:4]
     context = {
         'post': post,
         'comments': comments,
-        'form': form
+        'form': form,
+        'similar_posts': similar_posts
     }
     return render(request, 'blog/post/detail.html', context)
 
