@@ -1,0 +1,173 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$t77lmg7XkDL2xJSyDikYKv$id8n8iQsspYgrzWLZ+GeecwwejUOOuZ8Fj3vTZzo3Qs=",
+      "last_login": "2025-02-18T02:39:59.862Z",
+      "is_superuser": true,
+      "username": "jirofg",
+      "first_name": "",
+      "last_name": "",
+      "email": "jirofg@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-02-10T21:46:53.475Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 1,
+    "fields": {
+      "name": "tilin",
+      "slug": "tilin"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 2,
+    "fields": {
+      "name": "markdown",
+      "slug": "markdown"
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 1,
+    "fields": {
+      "tag": 1,
+      "content_type": 7,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 2,
+    "fields": {
+      "tag": 1,
+      "content_type": 7,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "taggit.taggeditem",
+    "pk": 3,
+    "fields": {
+      "tag": 2,
+      "content_type": 7,
+      "object_id": 6
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "Eso tilin",
+      "slug": "eso_tilin",
+      "body": "Eso tilin a la mierda tilin",
+      "publish": "2025-02-10T21:50:44Z",
+      "created": "2025-02-10T21:56:59.809Z",
+      "updated": "2025-02-18T01:54:09.494Z",
+      "status": "PB",
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+      "title": "El trapo",
+      "slug": "el-trapo",
+      "body": "El trapo, el trapo el trapo el trapo",
+      "publish": "2025-02-10T22:13:11Z",
+      "created": "2025-02-10T22:13:43.157Z",
+      "updated": "2025-02-18T02:40:08.429Z",
+      "status": "PB",
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 3,
+    "fields": {
+      "title": "La patita de canasta",
+      "slug": "la-patita-de-canasta",
+      "body": "Y con reboso de bolita",
+      "publish": "2025-02-13T01:52:44Z",
+      "created": "2025-02-13T01:53:22.622Z",
+      "updated": "2025-02-13T01:53:22.622Z",
+      "status": "PB",
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 4,
+    "fields": {
+      "title": "Inga tu rona",
+      "slug": "inga-tu-rona",
+      "body": "Oye eso esta muy inga tu rona",
+      "publish": "2025-02-13T01:53:24Z",
+      "created": "2025-02-13T01:53:40.268Z",
+      "updated": "2025-02-13T01:53:40.268Z",
+      "status": "PB",
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 5,
+    "fields": {
+      "title": "Vere a las XG",
+      "slug": "vere-a-las-xg",
+      "body": "Estoy emocionado por ver a las XG",
+      "publish": "2025-02-13T01:53:41Z",
+      "created": "2025-02-13T01:53:58.920Z",
+      "updated": "2025-02-13T01:53:58.920Z",
+      "status": "PB",
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 6,
+    "fields": {
+      "title": "Markdown post",
+      "slug": "markdown-post",
+      "body": "This is a post formatted with markdown\r\n----------------------------------------\r\n*This is emphasized* and **this is more emphasized**\r\n\r\nHere is a list:\r\n\r\n* One\r\n* Two\r\n* Three\r\n\r\nAnd a [link to the django website](https://www.djangoproject.com/).",
+      "publish": "2025-02-18T20:53:46Z",
+      "created": "2025-02-18T20:55:39.806Z",
+      "updated": "2025-02-18T20:56:33.652Z",
+      "status": "PB",
+      "author": 1
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 1,
+    "fields": {
+      "post": 5,
+      "name": "tilin",
+      "email": "tilin@gmail.com",
+      "body": "Eso tilin a la mierda tilin",
+      "created": "2025-02-13T21:54:11.215Z",
+      "updated": "2025-02-13T21:54:11.215Z",
+      "active": true
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 2,
+    "fields": {
+      "post": 5,
+      "name": "perrito",
+      "email": "perrito@gmail.com",
+      "body": "Que pro",
+      "created": "2025-02-13T21:54:38.753Z",
+      "updated": "2025-02-13T21:54:38.753Z",
+      "active": true
+    }
+  }
+]

@@ -26,3 +26,5 @@ To run this project just follow these steps:
 > `python manage.py runserver`
 
 Developed by JiroFg
+
+docker run --name=blog_db -e POSTGRES_DB=blog -e POSTGRES_USER=blog -e POSTGRES_PASSWORD=Secret125 -p 5432:5432 -d postgres:16.2  
